@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{pst-plot}
+\usepackage{scrextend}
+\usepackage{advdate}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{pgfornament}
+\usepackage[many]{tcolorbox}
+\usepackage{collectbox}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage[final]{pdfpages}
+\usepackage[left=0.5in,right=0.5in,top=0.5in,bottom=0.5in,footskip=15mm]{geometry}
+
+\newfontfamily{\ubuntu}[Path=./fonts/,]{UbuntuMono-Regular}
+\newfontfamily{\ubuntui}[Path=./fonts/,]{UbuntuMono-Italic}
+\newfontfamily{\ubuntub}[Path=./fonts/,]{UbuntuMono-Bold}
+\newfontfamily{\oxanium}[Path=./fonts/,]{Oxanium-Regular}
+
+\definecolor{blue1}{RGB}{115, 3, 252}
+\definecolor{blue2}{RGB}{3, 53, 252}
+\definecolor{orange1}{RGB}{252, 107, 3}
+
+\newcommand{\cfbox}[2]{%
+    \colorlet{currentcolor}{.}%
+    {\color{#1}%
+    \fbox{\color{currentcolor}#2}}%
+}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\vspace{5mm}
+
+\noindent {\oxanium\textbf{\color{blue2}Eudaimonia}} \hfill \textbf{The Area Problem} \hspace{2mm} {\AdvanceDate[0]\today}
+
+\noindent {\Large \textbf{\textcolor{blue2}{{\ubuntu \hrulefill}}}}
+
+\vspace{5mm}
+
+\noindent\textbf{1. The Definition of Area}
+
+\vspace{1mm}
+
+\noindent We are motivated to define area because we would like to have the ability to easily compare the ``sizes'' of enclosed 2-dimensional regions. For example, a king with limited resources might want to know whether he should conquer \textbf{Land A} or \textbf{Land B}, based on how much food he can grow on the land he conquers.
+
+\vspace{3mm}
+
+\begin{center}
+\includegraphics[width = 0.3\textwidth]{images/land_comparison.png}
+\end{center}
+
+\vspace{3mm}
+
+\noindent It would be nice if he could compare two numbers (two areas) instead of two weird shapes. In order to do this, though, he would need a sensible way of defining numbers that meaningfully represent 2-dimensional shapes.
+
+\vspace{5mm}
+
+\noindent We begin by taking a really nice shape, a 1-by-1 square (also called a unit square), and defining its area.
+
+\vspace{5mm}
+
+\noindent\textcolor{blue2}{\textbf{Definition:}} \textit{The area of a unit square is 1 square unit.}
+
+\vspace{5mm}
+
+\noindent Now, since our goal is to compare more interesting 2-dimensional regions, we extend the definition. 
+
+\vspace{5mm}
+
+\noindent\textcolor{blue2}{\textbf{Definition:}} \textit{The area of an arbitrary 2-dimensional region is the number of unit squares that fit inside it.}
+
+\vspace{10mm}
+
+\noindent\textbf{2. Computing Areas of Regions without Curved Boundaries}
+
+\vspace{1mm}
+
+\noindent With these definitions, we can now easily find the area of any square or rectangle. For such a shape, we would simply place unit squares inside it until it was full. They would all fit without any manipulation, so there isn't much thought involved. Furthermore, we would easily see that we can develop formulas for the area of a square and the area of a rectangle, respectively. If a square has side lengths of $b$, then its area is $b^2$. If a rectangle has two sides of length $b$ and two sides of length $h$, then its area is $bh$.
+
+\begin{center}
+\includegraphics[width = 0.6\textwidth]{images/easy_area.png}
+\end{center}
+
+\noindent Now, how would we find the area of a triangle based on the definition of area? We might be able to fit a few unit squares inside a triangle without any manipulation, but how do we fill the rest of it? 
+
+\begin{center}
+\includegraphics[width = 0.2\textwidth]{images/fail_to_fill.png}
+\end{center}
+
+\noindent Can we somehow transform the triangle into a square or rectangle while \textbf{guaranteeing} that we haven't changed its area? If we could do this, then applying the definition of area would be simple. It turns out we can do this with the following procedure.
+
+\begin{center}
+\includegraphics[width = \textwidth]{images/tri_to_sq.png}
+\end{center}
+
+\noindent The base of the resulting rectangle would have half the length of the base of the triangle, and the height of the rectangle would be equal to the height of the triangle. For this reason, the area of a triangle with base length $b$ and height $h$ is $\frac{bh}{2}$.
+
+\vspace{10mm}
+
+\begin{center}
+\textbf{Homework}
+\end{center}
+
+\noindent\textbf{1.} Use a similar geometric transformation to find the formula for the area of a trapezoid.
+
+\vspace{15mm}
+
+\begin{center}
+\includegraphics[width = 0.8\textwidth]{images/trapezoid.png}
+\end{center}
+
+
+\end{document}
