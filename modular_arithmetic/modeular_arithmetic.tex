@@ -1,0 +1,208 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{pst-plot}
+\usepackage{scrextend}
+\usepackage{advdate}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{pgfornament}
+\usepackage[many]{tcolorbox}
+\usepackage{collectbox}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage[final]{pdfpages}
+\usepackage[left=0.5in,right=0.5in,top=0.5in,bottom=0.5in,footskip=15mm]{geometry}
+
+\newfontfamily{\ubuntu}[Path=./fonts/,]{UbuntuMono-Regular}
+\newfontfamily{\ubuntui}[Path=./fonts/,]{UbuntuMono-Italic}
+\newfontfamily{\ubuntub}[Path=./fonts/,]{UbuntuMono-Bold}
+
+\definecolor{blue1}{RGB}{115, 3, 252}
+\definecolor{blue2}{RGB}{3, 53, 252}
+\definecolor{orange1}{RGB}{252, 107, 3}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\vspace{5mm}
+
+\begin{tcolorbox}[width=0.41\textwidth, colback={white}, coltext=black, colframe={orange1}, fontupper=\bfseries]
+{\ubuntu \textbf{DUE:} Wednesday, April 12, 2023}
+\end{tcolorbox} \hfill {\ubuntu\textbf{\color{blue1}Rocco DeVito}}
+
+\hfill {\ubuntu Issued \AdvanceDate[0]\today}
+
+\vspace{10mm}
+
+\noindent {\Large \textbf{\textcolor{blue1}{{\ubuntu Modular Arithmetic and} $(\mathbb{Z}_{12}, +)$ \hrulefill}}}
+
+\vspace{10mm}
+
+\noindent {\ubuntu Imagine you live in Clock World, where you can only do addition using the hour hand of a clock.}
+
+\vspace{5mm}
+
+\begin{figure}[h] \centering
+    \includegraphics[width = 0.8\textwidth]{images/clock_world.jpeg}
+    \caption{\textcolor{blue1}{{\ubuntu Clock World: A.K.A. Salvador Dali's \ubuntui{The Persistence of Memory}}}}
+    \label{fig:dali}
+\end{figure}
+
+\vspace{5mm}
+
+\noindent {\ubuntu You would be limited in how many numbers you had to work with. To see why, imagine that the hour hand is currently pointing to the number $11$. Now advance by $15$ hours. Would the hour hand be pointing to the number $26$ (which is what $11 + 15$ is equal to)? What do you think? If you are unsure, look at the diagram below.}
+
+\begin{figure}[h] \centering
+    \includegraphics[width = 0.9\textwidth]{images/clock_addition_11_plus_15.png}
+    \caption{\textcolor{blue1}{{\ubuntu On a clock, $11 + 15 = 2$}}}
+    \label{fig:example1}
+\end{figure}
+
+\pagebreak
+
+\noindent {\ubuntu The number $26$ isn't actually on a clock, so it can't be the number the hour hand is pointing to. Whenever the hour hand goes beyond $12$, the count starts over again. If this makes sense to you, try to solve the following Clock World addition questions.}
+
+\vspace{5mm}
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.65\textwidth}
+        \includegraphics[width=\textwidth]{images/clock_question_3_plus_17.png}
+    \end{minipage}
+    \hfill
+\begin{minipage}{0.3\textwidth}
+        \begin{tikzpicture}
+            \draw[dashed] (0,0) rectangle (\textwidth, \textwidth); % Outlined square
+        \end{tikzpicture}
+    \end{minipage}
+\end{figure}
+
+\vspace{5mm}
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.65\textwidth}
+        \includegraphics[width=\textwidth]{images/clock_question_5_plus_12.png}
+    \end{minipage}
+    \hfill
+\begin{minipage}{0.3\textwidth}
+        \begin{tikzpicture}
+            \draw[dashed] (0,0) rectangle (\textwidth, \textwidth); % Outlined square
+        \end{tikzpicture}
+    \end{minipage}
+\end{figure}
+
+\vspace{5mm}
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.65\textwidth}
+        \includegraphics[width=\textwidth]{images/clock_question_8_plus_26.png}
+    \end{minipage}
+    \hfill
+\begin{minipage}{0.3\textwidth}
+        \begin{tikzpicture}
+            \draw[dashed] (0,0) rectangle (\textwidth, \textwidth); % Outlined square
+        \end{tikzpicture}
+    \end{minipage}
+\end{figure}
+
+\pagebreak
+
+\noindent {\ubuntu You might think that using pictures of clocks is a cumbersome way of doing mathematics. I agree, and so does every sane mathematician on earth. That's why we have mathematical notation. Allow me to introduce you to the mathematical object $(\mathbb{Z}_{12}, +).$ This mathematical object is technically a} \ubuntub{group}, \ubuntu{but we will get into what groups are at a later point. Let's examine the components of this object.}
+
+\vspace{5mm}
+
+\noindent {\ubuntu The notation $\mathbb{Z}_{12}$ represents the set of 'integers' from $0$ to $11$ (technically, they are \textbf{equivalence classes}, not integers, but don't worry about that yet). To make things clear for you, you can think of $\mathbb{Z}_{12}$ as}
+
+\vspace{3mm}
+
+\begin{center}
+\scalebox{1.5}{$\mathbb{Z}_{12} = \left\lbrace 0,1,2,3,4,5,6,7,8,9,10,11\right\rbrace.$}
+\end{center}
+
+\vspace{3mm}
+
+\noindent {\ubuntu The only difference between the numbers in $\mathbb{Z}_{12}$ and the numbers on a clock is that $\mathbb{Z}_{12}$ has a 0 where a clock has $12$. But, in Clock World, $12$ and $0$ are equal, so this isn't a huge problem. Here's a new clock, just to make this a little clearer.}
+
+\begin{figure}[h] \centering
+    \includegraphics[width = 0.4\textwidth]{images/mod12_clock.png}
+    \caption{\textcolor{blue1}{{\ubuntu In Clock World, $12 = 0$}}}
+    \label{fig:example1}
+\end{figure}
+
+\noindent {\ubuntu If you are familiar with military time, then you know that 12AM is equivalent to 00:00. This might help your understanding. You might also know that 1PM is equivalent to 13:00 and 2PM is equivalent to 14:00. Likewise, in $\mathbb{Z}_{12}$, since we only have the integers $0$ to $11$ to work with, $13 = 1$ and $14 = 2$. What would $17$ be equal to?}
+
+\vspace{5mm}
+
+\noindent {\ubuntu As for the $+$ in $(\mathbb{Z}_{12}, +)$, it represents something called 'addition modulo $12$.' You can think of it as 'wrap-around' addition, i.e., addition such that you can never get a sum higher than $11$. If you added two numbers together and got $12$, you would wrap-around to $0$; if you added two numbers together and got $13$, you would wrap-around to $1$; etc.}
+
+\vspace{5mm}
+
+\noindent {\ubuntu So the mathematical object $(\mathbb{Z}_{12}, +)$ is a model of a clock whose hour hand can be moved discretely in a clockwise direction. Here, 'discretely' means that the hour hand can't land on $8.5$ or $11.5678$; it can only land on integers. In other words, we aren't moving the hour hand through a continuum, if this word means anything to you. If it doesn't, don't worry about it.}
+
+\pagebreak
+
+\noindent {\ubuntu If I wanted to ask you to perform a Clock World addition question without using clock pictures, I would write something like this:}
+
+\begin{center}
+    \scalebox{1.5}{{\ubuntu Find the sum $4 + 25 \text{ (mod } 12).$}}
+\end{center}
+
+\noindent {\ubuntu This question is equivalent to the following picture question:}
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.65\textwidth}
+        \includegraphics[width=\textwidth]{images/notation_vs_pic.png}
+    \end{minipage}
+    \hfill
+\begin{minipage}{0.3\textwidth}
+        \begin{tikzpicture}
+            \draw[dashed] (0,0) rectangle (\textwidth, \textwidth); % Outlined square
+        \end{tikzpicture}
+    \end{minipage}
+\end{figure}
+
+\vspace{10mm}
+
+\hrulefill
+
+\vspace{10mm}
+
+\begin{center}
+    {\Large \textbf{\textcolor{blue1}{Exercises}}}
+\end{center}
+
+\noindent{\ubuntu\textbf{Instructions:} Compute the following sums modulo $12$.}
+
+\vspace{15mm}
+
+\noindent \scalebox{2}{\textcolor{blue1}{(1.)} $2 + 13 \text{ (mod } 12) = $}
+
+\vspace{12mm}
+
+\noindent \scalebox{2}{\textcolor{blue1}{(2.)} $9 + 24 \text{ (mod } 12) = $}
+
+\vspace{12mm}
+
+\noindent \scalebox{2}{\textcolor{blue1}{(3.)} $0 + 36 \text{ (mod } 12) = $}
+
+\vspace{12mm}
+
+\noindent \scalebox{2}{\textcolor{blue1}{(4.)} $7 + 19 \text{ (mod } 12) = $}
+
+\vspace{12mm}
+
+\noindent \scalebox{2}{\textcolor{blue1}{(5.)} $1 + 27 \text{ (mod } 12) = $}
+
+
+\end{document}
