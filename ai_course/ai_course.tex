@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage{helvet}
+\usepackage{fancyvrb}
+\usepackage[most]{tcolorbox}
+\usepackage{caption}
+\usepackage{fontspec}
+\usepackage{listings}
+\usepackage{scrextend}
+\usepackage{fancyvrb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage[left=0.4in,right=0.4in,top=1in,bottom=0.5in,footskip=15mm]{geometry}
+\usepackage{xeCJK}
+\setCJKmainfont{IPAMincho}
+\setCJKsansfont{IPAGothic}
+\setCJKmonofont{IPAGothic}
+\usepackage{modroman}
+
+\definecolor{backgroundColor}{RGB}{8, 29, 46}
+\definecolor{dateColor}{RGB}{0, 255, 213}
+\definecolor{darkCyan}{RGB}{0, 89, 74}
+\definecolor{mygray}{RGB}{133, 133, 133}
+\definecolor{mypurple}{RGB}{238, 0, 255}
+
+\newfontfamily{\oxaniumlight}[Path=./fonts/,]{Oxanium-Light}
+\newfontfamily{\ubuntu}[Path=./fonts/,]{UbuntuMono-Regular}
+
+\newtcbox{\mybox}[1][red]{on line,
+    colback=backgroundColor, colframe=dateColor, boxsep=1.5mm, boxrule=0.3mm, arc=4mm}
+
+\newtcbox{\mycodebox}[1][red]{on line,
+    colback=black, boxsep=0mm, boxrule=0mm, arc=2mm}
+
+\begin{document}
+\pagecolor{backgroundColor}
+
+\begin{center}
+{\huge\textcolor{white}{\oxaniumlight Eudaimonia}}
+
+\vspace{3mm}
+
+\textcolor{white}{\oxaniumlight Introduction to Using Modern AI Tools}
+\end{center}
+
+\vspace{10mm}
+
+\input{sept17}
+
+\vspace{10mm}
+
+\input{sept24}
+
+\vspace{10mm}
+
+\input{oct1}
+
+\vspace{10mm}
+
+\input{oct8}
+
+\vspace{10mm}
+
+\input{oct15}
+
+\vspace{10mm}
+
+\input{oct22}
+
+\vspace{10mm}
+
+\input{oct29}
+
+\vspace{10mm}
+
+\input{nov05}
+
+\vspace{10mm}
+
+\input{nov12}
+
+\vspace{10mm}
+
+\input{nov19}
+
+\vspace{10mm}
+
+\input{nov26}
+
+\vspace{10mm}
+
+\input{dec02}
+
+\vspace{10mm}
+
+\input{dec09}
+
+\vspace{10mm}
+
+\input{dec16}
+
+\vspace{20mm}
+
+\input{commands_learned}
+
+\vspace{20mm}
+
+\input{python_keywords}
+
+\vspace{40mm}
+
+\input{terminology_acquired_in_course}
+
+\vspace{20mm}
+
+\input{skills_acquired_through_course}
+
+\end{document}
