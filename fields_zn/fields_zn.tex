@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{pst-plot}
+\usepackage{scrextend}
+\usepackage{advdate}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{pgfornament}
+\usepackage[many]{tcolorbox}
+\usepackage{collectbox}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage[final]{pdfpages}
+\usepackage[left=0.5in,right=0.5in,top=0.5in,bottom=0.5in,footskip=15mm]{geometry}
+
+\newfontfamily{\ubuntu}[Path=./fonts/,]{UbuntuMono-Regular}
+\newfontfamily{\ubuntui}[Path=./fonts/,]{UbuntuMono-Italic}
+\newfontfamily{\ubuntub}[Path=./fonts/,]{UbuntuMono-Bold}
+
+\definecolor{blue1}{RGB}{115, 3, 252}
+\definecolor{blue2}{RGB}{3, 53, 252}
+\definecolor{orange1}{RGB}{255, 68, 0}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\vspace{5mm}
+
+
+\noindent {\ubuntu  \hfill {\ubuntu\textbf{\color{orange1}Rocco DeVito}}
+
+\hfill {\ubuntu Issued \AdvanceDate[0]\today}
+
+\noindent {\Large \textbf{\textcolor{orange1}{{\ubuntu $\mathbb{Z}_n$}  \hrulefill}}}
+
+\vspace{5mm}
+
+\noindent{\ubuntu As we have already learned $\mathbb{Z}/n\mathbb{Z} = \left\lbrace 0, 1, 2, 3, \ldots, n-1 \right\rbrace$. Fortunately, there is a shorter notation to represent this object. That notation is $\mathbb{Z}_n$. For example,} $$\mathbb{Z}_4 = \mathbb{Z}/4\mathbb{Z} = \left\lbrace 0, 1, 2, 3 \right\rbrace$$ $$\mathbb{Z}_7 = \mathbb{Z}/7\mathbb{Z} = \left\lbrace 0, 1, 2, 3, 4, 5, 6 \right\rbrace.$$
+
+\vspace{3mm}
+
+\noindent{\ubuntu {\ubuntub Caution:} $\left(\mathbb{Z}/4\mathbb{Z}\right)^{\times}=\left\lbrace 1, 3 \right\rbrace$ and $\mathbb{Z}/4\mathbb{Z} = \left\lbrace 0, 1, 2, 3\right\rbrace$ are not the same thing, so you can't write  $\left(\mathbb{Z}/4\mathbb{Z}\right)^{\times} = \mathbb{Z}_4$. To make things clear, $\left(\mathbb{Z}/4\mathbb{Z}\right)^{\times}$ is the set of totatives of $4$, while $\mathbb{Z}_4 = \mathbb{Z}/4\mathbb{Z}$ is the set of remainders you can get when dividing by $4$.}
+
+\vspace{8mm}
+
+\noindent{\ubuntu {\ubuntub Example:} Some, but not all, of the $\mathbb{Z}_n$'s are fields. For example, $\mathbb{Z}_3 = \left\lbrace 0, 1, 2 \right\rbrace$ with addition$\pmod{3}$ and multiplication$\pmod{3}$ is a field. Let's see why: \textcolor{orange1}{\textbf{(1)}}} It is pretty clear that modular multiplication distributes over modular addition, so the distributive property is taken care of. \textcolor{orange1}{\textbf{(2)}} Now, we have to check that $(\mathbb{Z}_3, +\pmod{3})$ is a commutative group. It contains $0$, which is the additive identity. Modular addition is obviously associative and commutative. The additive inverse of $0$ is $0$, and $1$ and $2$ are additive inverses of each other. Thus, $(\mathbb{Z}_3, +\pmod{3})$ is a commutative group. \textcolor{orange1}{\textbf{(3)}} Finally, we have to check that $(\mathbb{Z}_3 \setminus \left\lbrace 0 \right\rbrace, \times\pmod{3})$ is a commutative group. It contains $1$, which is the multiplicative identity. Modular multiplication is associative and commutative. The only elements in this set are $1$ and $2$, both of which are self-inverses. Therefore, $(\mathbb{Z}_3 \setminus \left\lbrace 0 \right\rbrace, \times\pmod{3})$ is a group, and $(\mathbb{Z}_3, +\pmod{3}, \times\pmod{3})$ is a field.}
+
+\vspace{8mm}
+
+\noindent{\ubuntu {\ubuntub Non-example:} $\mathbb{Z}_4$ is not a field. This is because $\mathbb{Z}_4\setminus\left\lbrace 0 \right\rbrace = \left\lbrace 1, 2, 3 \right\rbrace$ is a not a group under multiplication$\pmod{4}$: the element $2$ doesn't have a multiplicative inverse. Make sure you understand why.}
+
+\vspace{20mm}
+
+\begin{center}
+{\Large \textbf{\textcolor{red}{{\ubuntu Exercises}}}}
+\end{center}
+
+\vspace{5mm}
+
+\noindent {\ubuntub (1.)} {\ubuntu Find two $\mathbb{Z}_n$'s that are fields and two that aren't. Can you make an educated guess about which $\mathbb{Z}_n$'s are fields?}
+
+\end{document}
