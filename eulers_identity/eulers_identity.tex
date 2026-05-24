@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{scrextend}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{mathrsfs}
+\usepackage{fancyhdr}
+\usepackage{pgfornament}
+\usepackage[many]{tcolorbox}
+\usepackage{collectbox}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage[final]{pdfpages}
+\usepackage[left=0.5in,right=0.5in,top=0.5in,bottom=1in,footskip=15mm]{geometry}
+
+\usepackage{xcolor}
+\linespread{1.2}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{center}
+\begin{Large}
+\textbf{Information about Imaginary Numbers, version 0} \\
+
+\vspace{5mm}
+\end{Large}
+\end{center}
+
+\vspace{10mm}
+
+\begin{addmargin}[3em]{4em}
+\textbf{Statement:} \hspace{2mm} The imaginary number $i$ is such that $i\neq0, i \not< 0$, and $i\not>0$.
+
+\vspace{5mm}
+
+\noindent\textbf{Proof:} Clearly $i\neq 0$ because $i\overset{\text{def}}{=}\sqrt{-1}$, so suppose $i<0$. If we multiply this inequality by $i$ on both sides, we obtain $$i\cdot i = i^2 = -1 > i \cdot 0 = 0,$$ or simply $-1 > 0$ (note that the direction of the inequality symbol flipped because we supposed $i<0$). This is a contradiction. Now suppose $i>0$. Multiplying this inequality by $i$ on both sides yields $$i\cdot i = i^2 = -1 > i\cdot 0 = 0,$$ i.e., $-1>0$, the same contradiction as before. Thus, we conclude that $i\neq 0$, $i\not<0$, and $i\not>0.$
+
+\hfill$\blacksquare$
+
+\vspace{80mm}
+
+\noindent\textbf{Euler's Identity (``Euler'' is pronounced like ``Oiler''):} It can be shown using calculus that $$\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \ldots$$ $$\cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \ldots$$ $$e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \ldots$$ 
+
+\vspace{2mm}
+
+\noindent These are called Maclaurin Series. Let's try adding $\cos(x)$ and $\sin(x)$ together to see what happens. We get
+
+\begin{align*}
+\cos(x) + \sin(x) &= \left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \ldots\right) + \left( x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \ldots\right) \\
+&= 1 + x - \frac{x^2}{2!} - \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} - \frac{x^6}{6!} - \frac{x^7}{7!} + \ldots
+\end{align*}
+
+\noindent Notice that this looks almost like the Maclaurin Series for $e^x$, but some of the signs are off. Can we fix that? Notice that all of the terms with powers that are multiples of $4$ have a positive sign in front of them. Furthermore, all the terms with even powers that are not multiples of $4$ have negative signs in front of them. This is consistent with how $i$ behaves; for example, $i^2 = -1$, $i^4=1$, $i^6=-1$, $i^8=1$ and so on. Therefore, we can write
+
+\begin{align*}
+\cos(x) + \sin(x) &= \left(1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \ldots\right) + \left( x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \ldots\right) \\
+&= 1 + x - \frac{x^2}{2!} - \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} - \frac{x^6}{6!} - \frac{x^7}{7!} + \ldots \\
+&= 1 + x + i^2 \frac{x^2}{2!} - \frac{x^3}{3!} + i^4 \frac{x^4}{4!} + \frac{x^5}{5!} + i^6 \frac{x^6}{6!} - \frac{x^7}{7!} + \ldots \\ 
+&= 1 + x + \frac{(ix)^2}{2!} - \frac{x^3}{3!} + \frac{(ix)^4}{4!} + \frac{x^5}{5!} + \frac{(ix)^6}{6!} - \frac{x^7}{7!} + \ldots
+\end{align*}
+
+\noindent This makes all of the even terms positive. We still need to make all the terms with odd exponents positive to make this look like the Maclaurin Series for $e^x$. These terms have signs consistent with the odd powers of $i$. For example, $i^1=i$, $i^3=-i$, $i^5=i$, $i^7=-i$, and so on. While the signs are right, there are in fact no $i$'s in these terms. In order to get them in there, we have to actually multiply them by $i$. So let us look at $\cos(x) + i\sin(x).$ We have 
+
+\begin{align*}
+\cos(x) + i\sin(x) &= 1 + ix + \frac{(ix)^2}{2!} - i\frac{x^3}{3!} + \frac{(ix)^4}{4!} + i\frac{x^5}{5!} + \frac{(ix)^6}{6!} - i\frac{x^7}{7!} + \ldots \\
+&= 1 + ix + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} + \frac{(ix)^5}{5!} + \frac{(ix)^6}{6!} + \frac{(ix)^7}{7!} + \ldots \\
+&= e^{ix}.
+\end{align*}
+
+\noindent Having established that $e^{ix} = \cos(x) + i\sin(x),$ we can now conclude that $$e^{i\pi} = \cos(\pi) + i \sin(\pi) = -1 + i \cdot 0 = -1.$$ In other words, $$e^{i\pi} + 1 = 0.$$
+
+\end{addmargin}
+
+\end{document}
