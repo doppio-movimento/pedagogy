@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{pgfornament}
+\usepackage[many]{tcolorbox}
+\usepackage[margin = 0.5in]{geometry}
+\usepackage{collectbox}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand\textbox[1]{%
+  \parbox{.333\textwidth}{#1}%
+}
+
+\linespread{1.3}
+
+\makeatletter
+\newcommand{\mybox}{%
+    \collectbox{%
+        \setlength{\fboxsep}{2pt}%
+        \fbox{\BOXCONTENT}%
+    }%
+}
+\makeatother
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=R,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{Large}
+\begin{center}
+    \textbf{Mnemonic for $\int \sec^3\theta \hspace{1mm} d\theta$}
+\end{center}
+\end{Large}
+
+\vspace{5mm}
+
+\noindent The anti-derivative $\int \sec^3\theta \hspace{1mm} d\theta$ often shows up in trigonometric substitution problems. It's annoying to do, but, fortunately, there's an easy way to remember what it's equal to. Unfortunately, we will have to do the anti-derivative the hard way once. First write
+
+\begin{align*}
+    \int\sec^3\theta \hspace{1mm} d\theta &= \int\sec^2\theta\sec\theta \hspace{1mm} d\theta.
+\end{align*}
+
+\noindent Now we will use integration by parts. Let $u=\sec\theta$ and $dv = \sec^2\theta \hspace{1mm} d\theta$. Then $du = \sec\theta\tan\theta$ and $v=\tan\theta$. Using these equations and the integration-by-parts formula, we will have
+
+\begin{align*}
+    \int\sec^2\theta\sec\theta \hspace{1mm} d\theta &= \sec\theta\tan\theta - \int\sec\theta\tan^2\theta \hspace{1mm} d\theta \\
+    &= \sec\theta\tan\theta - \int\sec\theta\left[\sec^2\theta-1\right] \hspace{1mm} d\theta \\
+    &= \sec\theta\tan\theta - \int\sec^3\theta \hspace{1mm} d\theta + \int\sec\theta \hspace{1mm} d\theta \\
+    &= \frac{d}{d\theta}\left[\sec\theta\right] + \int\sec\theta \hspace{1mm} d\theta - \int\sec^3\theta \hspace{1mm} d\theta.
+\end{align*}
+
+\noindent It is now evident that
+
+\begin{align*}
+    \int\sec^3\theta \hspace{1mm} d\theta  &= \frac{d}{d\theta}\left[\sec\theta\right] + \int\sec\theta \hspace{1mm} d\theta  - \int\sec^3\theta \hspace{1mm} d\theta.
+\end{align*}
+
+\noindent Therefore,
+
+\begin{align*}
+    2\int\sec^3\theta \hspace{1mm} d\theta  &= \frac{d}{d\theta}\left[\sec\theta\right] + \int\sec\theta \hspace{1mm} d\theta,
+\end{align*}
+
+\noindent i.e., 
+
+\begin{align*}
+    \int\sec^3\theta \hspace{1mm} d\theta  &= \frac{1}{2}\left[ \frac{d}{d\theta}\left[\sec\theta\right] + \int\sec\theta \hspace{1mm} d\theta \right].
+\end{align*}
+
+\noindent In words, \textbf{$\int\sec^3\theta \hspace{1mm} d\theta$ is equal to half the sum of the derivative and the anti-derivative of $\sec\theta$.} This formula will be useful as long as you know that $\frac{d}{d\theta}[\sec\theta] = \sec\theta\tan\theta$ and $\int\sec\theta \hspace{1mm} d\theta = \ln|\sec\theta + \tan\theta|$.
+
+\end{document}
