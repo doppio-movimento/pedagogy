@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{pst-plot}
+\usepackage{scrextend}
+\usepackage{advdate}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{pgfornament}
+\usepackage[many]{tcolorbox}
+\usepackage{collectbox}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage[hidelinks]{hyperref}
+\usepackage[final]{pdfpages}
+\usepackage[left=0.5in,right=0.5in,top=0.5in,bottom=0.5in,footskip=15mm]{geometry}
+
+\newfontfamily{\ubuntu}[Path=./fonts/,]{UbuntuMono-Regular}
+\newfontfamily{\ubuntui}[Path=./fonts/,]{UbuntuMono-Italic}
+\newfontfamily{\ubuntub}[Path=./fonts/,]{UbuntuMono-Bold}
+
+\definecolor{blue1}{RGB}{115, 3, 252}
+\definecolor{blue2}{RGB}{3, 53, 252}
+\definecolor{orange1}{RGB}{255, 68, 0}
+\setmainfont{Arial}
+\onehalfspacing 
+\begin{document}
+\pagenumbering{gobble}
+
+\hfill \textbf{Rocco DeVito}
+
+\hfill \today
+
+\vspace{2mm}
+
+\noindent {\Large \textbf{\textcolor{blue1}{The Polynomial Ring $\mathbb{Z}[x]$} (Part One)  \hrulefill}}
+
+\vspace{8mm}
+
+\noindent A term that you should become familiar with is \textbf{ostensive definition}. To define a word ostensively, you give examples of things that would be classified as whatever the word is. There are also \textbf{formal definitions} in mathematics, but they are often extremely difficult to comprehend without sufficient experience. For this reason, I will resort to using ostensive definitions as much as possible. Note, however, that deep mathematics requires formal definitions. Ostensive definitions are only for pedagogical purposes.
+
+\vspace{5mm}
+
+\noindent Let me ostensively define what \textbf{polynomials} are. They are things like these:
+\begin{align*}
+&x^2 + 2x + 3, \\
+&x^4-6x^3+9x-1, \\
+&x^{11}-5x, \\
+&x^{27}-8x^{14}+9x^3-x
+\end{align*}
+\noindent The numbers in front of the powers of $x$ are called \textbf{coefficients}. For example, the coefficient on the $x^3$ term in the second polynomial above is $-6$. Knowing this word is crucial for fluently conversing in the language of mathematics. Do not worry about what $x$ is. It is unknown, and we are \underline{\textbf{not}} trying to solve for it.
+
+\vspace{5mm}
+
+\noindent Take note of the following: Polynomials themselves are \underline{\textbf{not}} equations. There is such a thing as a polynomial equation, but the entities above have no equals signs in them. Thus, they are not equations. To further clarify what polynomials are, let me provide you with some \textbf{non-polynomials} (things that aren't polynomials):
+\begin{align*}
+&e^{2x}+7, \\
+&\ln(5x+2)+\sqrt{x},\\
+&e^x + x^6+2x-1,\\
+&6\cos(x)+ 8\sin(x)
+\end{align*}
+
+\noindent If you take all the polynomials with coefficients in $\mathbb{Z}$, you get a ring that we denote by $\mathbb{Z}[x].$ You can call it \textbf{the ring of polynomials with coefficients in $\mathbb{Z}$}. Remember: a ring is a set equipped with \underline{\textbf{two}} operations. For today's lesson, we will only concern ourselves with the addition operation. We will save multiplication for next time. Let me ostensively define polynomial addition. Let's add together the polynomials $4x^3-5x^2+x-7$ and $-9x^7+5x^3+12x^2+9$. I'm going to start by putting each of these in parentheses for the sake of readability and distinction. We have
+\begin{align*}
+\textcolor{red}{(}4x^3-5x^2+x-7\textcolor{red}{)} + \textcolor{red}{(}-9x^7+5x^3+12x^2+9\textcolor{red}{)} &= -9x^7 + 4x^3 + 5x^3 - 5x^2 + 12x^2 + x - 7 + 9 \\
+&= -9x^7 + (4x^3 +5x^3) + (-5x^2 + 12x^2) + x + (-7 + 9) \\
+&= -9x^7 + 9x^3 + 7x^2 + x + 2.
+\end{align*}
+\noindent Look at the above calculation very carefully. To perform polynomial addition, you simply add coefficients on corresponding powers of $x$ together. If one of your polynomials had $6x^3$ in it and the the other had $7x^3$ in it, your resulting polynomial would have $13x^3$ in it. Note that terms like $3x^8$ and $2x^2$ cannot be added together, because their powers of $x$ are not the same. 
+
+\vspace{5mm}
+
+\begin{center}
+{\large\textbf{Exercises}}
+\end{center}
+
+\vspace{3mm}
+
+\noindent \textcolor{blue1}{(1.)} Find the sum of $x^4+9x^2$ and $x^5 - 2x^4 + 2x^2$.
+
+\vspace{30mm}
+
+\noindent \textcolor{blue1}{(2.)} Find the difference of $2x^3 + 4x^2$ and $7x^3 + 2x^2$.
+
+\vspace{30mm}
+
+\noindent \textcolor{blue1}{(3.)} Prove (informally) that $\mathbb{Z}[x]$ forms an Abelian group under polynomial addition (``Abelian'' means ``commutative'').
+
+
+
+
+
+\end{document}
