@@ -1,0 +1,5 @@
+n = p * q, where p and q are prime is released as part of the public key,
+but lambda(n) is kept a secret. How is it possible for lambda(n) to be a secret
+if n is public information? Because computing lambda(n) is pretty much impossible
+unless you know what prime numbers n consists of. The numbers p and q are kept a 
+secret.
