@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{pst-plot}
+\usepackage{scrextend}
+\usepackage{advdate}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{pgfornament}
+\usepackage[many]{tcolorbox}
+\usepackage{collectbox}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage[final]{pdfpages}
+\usepackage[left=0.5in,right=0.5in,top=0.5in,bottom=0.5in,footskip=15mm]{geometry}
+
+\newfontfamily{\ubuntu}[Path=./fonts/,]{UbuntuMono-Regular}
+\newfontfamily{\ubuntui}[Path=./fonts/,]{UbuntuMono-Italic}
+\newfontfamily{\ubuntub}[Path=./fonts/,]{UbuntuMono-Bold}
+
+\definecolor{blue1}{RGB}{115, 3, 252}
+\definecolor{blue2}{RGB}{3, 53, 252}
+\definecolor{orange1}{RGB}{252, 107, 3}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\noindent\textbf{Theorem 1:} $a^2\equiv 1 \pmod{a+1}$ for all $a\in\mathbb{Z}.$
+
+\vspace{5mm}
+
+\noindent\textbf{Proof:} Since $a^2-1=(a+1)(a-1)$, we have $a^2-1\equiv 0 \pmod{a+1}$. Therefore, $a^2\equiv 1\pmod{a+1}.$
+
+\hfill$\blacksquare$
+
+\vspace{10mm}
+
+\noindent\textbf{Corollary (Rocco's Theorem):} For prime $p>3$, the multiplicative group $(\mathbb{Z}/p\mathbb{Z})^{\times} \neq \left<p-1\right>.$
+
+\vspace{5mm}
+
+\noindent\textbf{Proof:} By Theorem 1, the order of the element $p-1\in (\mathbb{Z}/p\mathbb{Z})^{\times}$ is 2. The order of $(\mathbb{Z}/p\mathbb{Z})^{\times}$, however, is $\phi(p) = p - 1 > 2.$ It is, therefore, impossible to generate $(\mathbb{Z}/p\mathbb{Z})^{\times}$ with $p-1$.
+
+\end{document}
