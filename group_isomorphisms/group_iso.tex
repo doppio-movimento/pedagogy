@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{pst-plot}
+\usepackage{scrextend}
+\usepackage{advdate}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{pgfornament}
+\usepackage[many]{tcolorbox}
+\usepackage{collectbox}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage[final]{pdfpages}
+\usepackage[left=0.5in,right=0.5in,top=0.5in,bottom=0.5in,footskip=15mm]{geometry}
+
+\newfontfamily{\ubuntu}[Path=./fonts/,]{UbuntuMono-Regular}
+\newfontfamily{\ubuntui}[Path=./fonts/,]{UbuntuMono-Italic}
+\newfontfamily{\ubuntub}[Path=./fonts/,]{UbuntuMono-Bold}
+
+\definecolor{blue1}{RGB}{115, 3, 252}
+\definecolor{blue2}{RGB}{3, 53, 252}
+\definecolor{orange1}{RGB}{252, 107, 3}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\vspace{5mm}
+
+
+\noindent {\ubuntu \textbf{\textcolor{red}{DUE:}} Friday, May 12, 2023} \hfill {\ubuntu\textbf{\color{blue1}Rocco DeVito}}
+
+\hfill {\ubuntu Issued \AdvanceDate[0]\today}
+
+\noindent {\Large \textbf{\textcolor{blue1}{{\ubuntu Group Isomorphisms}  \hrulefill}}}
+
+\vspace{5mm}
+
+\noindent{\ubuntu An {\ubuntub isomorphism is a structure-preserving bijective mapping}. If you can find an isomorphism between two groups, then you can think about one group in terms of the other, and vice versa. This is similar to an analogy in everyday English.}
+
+\vspace{5mm}
+
+\noindent{\ubuntu You already know what a {\ubuntub bijection} is, but what does it mean for a bijection to be {\ubuntub structure-preserving}? Suppose $G$ and $H$ are isomorphic groups. If you discover some interesting result about the elements in $G$ with respect to the group operation, then your isomorphism will tell you exactly how to find the analogous result in $H$. This is what {\ubuntu structure-preserving} means.}
+
+\vspace{5mm}
+
+\noindent{\textcolor{blue1}{{\ubuntub Example:}} {\ubuntu It turns out that $(\mathbb{Z}/5\mathbb{Z})^{\times} = \left\lbrace 1,2,3,4\right\rbrace$ under multiplication$\pmod{5}$ and $C = \left\lbrace 1, -1, i, -i \right\rbrace$ under normal multiplication are isomorphic. The isomorphism is as follows:
+\begin{align*}
+    1 &\text{ maps to } 1 \\
+    2 &\text{ maps to } i \\
+    3 &\text{ maps to } -i \\
+    4 &\text{ maps to } -1
+\end{align*}}
+
+\noindent{\ubuntu Confirm that $2$ and $3$ are inverses in $(\mathbb{Z}/5\mathbb{Z})^{\times}.$ Confirm that $i$ and $-i$ are inverses in $C = \left\lbrace 1, -1, i, -i \right\rbrace.$ Now look at the isomorphism again. It's not random that $2$ maps to $i$ and $3$ maps to $-i$. Isomorphisms must preserve inverses. Mere bijections don't have to do this, but isomorphisms do. Had we mapped $2$ to $-1$ and $4$ to $i$, we would still have a bijection, but not an isomorphism.}
+
+\vspace{5mm}
+
+\noindent{\ubuntu Remember Rocco's Theorem? That the last element of $(\mathbb{Z}/n\mathbb{Z})^{\times}$ cannot generate the group (unless its order is $\leq 2$) because it is always its own inverse? That element is $4$ in the case of $(\mathbb{Z}/5\mathbb{Z})^{\times}$. Notice that $4$ maps to $-1$ under the isomorphism. Is it true that $-1$ is also incapable of generating its respective group?
+
+\hfill\scalebox{1.5}{\textcolor{blue1}{$\blacklozenge$}}
+
+\begin{center}
+{\Large \textbf{\textcolor{blue1}{{\ubuntu Exercises}}}}
+\end{center}
+
+\vspace{5mm}
+
+\noindent {\ubuntub (1.)} {\ubuntu It turns out that $(\mathbb{Z}/5\mathbb{Z})^{\times}$ is also isomorphic to $(\mathbb{Z}/10\mathbb{Z})^{\times}.$ The isomorphism is 
+\begin{align*}
+    1 &\text{ maps to } 1 \\
+    2 &\text{ maps to } 3 \\
+    3 &\text{ maps to } 7 \\
+    4 &\text{ maps to } 9
+\end{align*}}
+
+\noindent {\ubuntu In $(\mathbb{Z}/5\mathbb{Z})^{\times}$, the following equation is true:} $$4\times3\times4 \pmod{5} = 3.$$ {\ubuntu Using {\ubuntub only} the isomorphism, find the analogous equation in $(\mathbb{Z}/10\mathbb{Z})^{\times}$. Then confirm that it is true.} 
+
+
+\end{document}
