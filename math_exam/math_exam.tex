@@ -1,0 +1,277 @@
+\documentclass[12pt]{article}
+\usepackage{pst-plot}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{scrextend}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{soul}
+\usepackage{fancyhdr}
+\usepackage{pgfornament}
+\usepackage[many]{tcolorbox}
+\usepackage{collectbox}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage[final]{pdfpages}
+\usepackage[left=0.5in,right=0.5in,top=1in,bottom=1in,footskip=15mm]{geometry}
+
+% ------------
+% Custom fonts
+% ------------
+\newfontfamily{\quicksand}[Path=./fonts/,]{Quicksand-Regular}
+\newfontfamily{\cousine}[Path=./fonts/,]{Cousine-Regular}
+\newfontfamily{\cousinebd}[Path=./fonts/,]{Cousine-Bold}
+
+% -------------
+% Custom colors
+% -------------
+\definecolor{eBrightWhite}{RGB}{200,200,200}
+\definecolor{eBlueOne}{RGB}{2,0,50}
+\definecolor{ePurple}{RGB}{157,27,249}
+\definecolor{eGreen}{RGB}{0,255,128}
+
+% ---------------
+% Custom commands
+% ---------------
+\newcommand{\sectionHeader}[3]{
+\noindent {\Huge {\quicksand \textcolor{ePurple}{#1:} \hspace{3mm}\textcolor{white}{#2}}}
+
+\vspace{15mm}
+}
+
+\linespread{1.2}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+\pagecolor{eBlueOne}
+\sectionHeader{Section 1}{Number Theory}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 1.} Circle the numbers in the table below that are divisible by 3.}}}
+
+\vspace{10mm}
+
+\begin{center}
+{\cousine
+\begin{tabular}{ccc}
+\textcolor{white}{699630} \hspace{5mm} & \textcolor{white}{6661} \hspace{5mm} & \textcolor{white}{5052} \\
+\\
+\textcolor{white}{777} \hspace{5mm} & \textcolor{white}{9991332} \hspace{5mm} & \textcolor{white}{40000044} \\
+\\
+\textcolor{white}{66666} \hspace{5mm} & \textcolor{white}{783209} \hspace{5mm} & \textcolor{white}{0} \\
+\end{tabular}
+}
+\end{center}
+
+\end{addmargin}
+
+\vspace{15mm}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 2.} Circle the numbers in the table below that are divisible by 4.}}}
+
+\vspace{10mm}
+
+\begin{center}
+{\cousine
+\begin{tabular}{ccc}
+\textcolor{white}{7840} \hspace{5mm} & \textcolor{white}{1000} \hspace{5mm} & \textcolor{white}{5748324} \\
+\\
+\textcolor{white}{6661} \hspace{5mm} & \textcolor{white}{5423} \hspace{5mm} & \textcolor{white}{80000052} \\
+\\
+\textcolor{white}{5432} \hspace{5mm} & \textcolor{white}{4325} \hspace{5mm} & \textcolor{white}{0} \\
+\end{tabular}
+}
+\end{center}
+
+\end{addmargin}
+
+\vspace{15mm}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 3.} Write a 10-digit number that is divisible by 12. The digits cannot all be the same number.}}}
+\end{addmargin}
+
+\vspace{15mm}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 4.} Why is it impossible to create a number that is divisible by 4 with only odd digits?}}}
+\end{addmargin}
+
+\vspace{15mm}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 5.} Order the digits 1, 9, and 2 to create a number that is divisible by 3, but not by 12.}}}
+\end{addmargin}
+
+\pagebreak
+\newpage
+
+\sectionHeader{Section 2}{Real Algebra}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 1.} Classify and solve {\Large $$4x + 5 = 21.$$}}}}
+\end{addmargin}
+
+\vspace{60mm}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 2.} Classify and solve {\Large $$\frac{1}{x-2}+7=10.$$}}}}
+\end{addmargin}
+
+\vspace{70mm}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 3.} Classify and solve {\Large $$x^2-7x-78=0.$$}}}}
+\end{addmargin}
+
+\sectionHeader{Section 3}{Complex Arithmetic}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 1.} {\Large $$7\cdot(7+6i)=$$}}}}
+\end{addmargin}
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 2.} {\Large $$(2+6i)^{*}=$$}}}}
+\end{addmargin}
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 3.} {\Large $$(2-8i)\cdot(8+7i)=$$}}}}
+\end{addmargin}
+
+\vspace{30mm}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 4.} {\Large $$(9+2i)\cdot(9-2i)=$$}}}}
+\end{addmargin}
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 5.} {\Large $$\frac{2+3i}{1-2i}=$$}}}}
+\end{addmargin}
+
+\pagebreak
+\newpage
+
+\sectionHeader{Section 4}{Coordinate Geometry}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 1.} Write the function that each graph corresponds to.}}}
+
+\begin{tabular}{ccc}
+
+\begin{pspicture}(-1.5,0)(0,3.5)
+    \def\f(#1){#1^2}
+    \psaxes[linecolor=white,tickcolor=white,labels=none,ticksize=-2pt 2pt]{->}(0,0)(-2,-2)(2,2)[\textcolor{white}{$x$},0][\textcolor{white}{$y$},90]
+    \psplot[linecolor=eGreen,algebraic]{-1.5}{1.5}{\f(x)}
+\end{pspicture} \hspace{40mm}
+
+&
+
+\begin{pspicture}(-1.5,0)(0,3.5)
+    \def\f(#1){#1}
+    \psaxes[linecolor=white,tickcolor=white,labels=none,ticksize=-2pt 2pt]{->}(0,0)(-2,-2)(2,2)[\textcolor{white}{$x$},0][\textcolor{white}{$y$},90]
+    \psplot[linecolor=eGreen,algebraic]{-1.5}{1.5}{\f(x)}
+\end{pspicture} \hspace{40mm}
+
+&
+
+\begin{pspicture}(-1.5,0)(0,3.5)
+    \def\f(#1){#1^3}
+    \psaxes[linecolor=white,tickcolor=white,labels=none,ticksize=-2pt 2pt]{->}(0,0)(-2,-2)(2,2)[\textcolor{white}{$x$},0][\textcolor{white}{$y$},90]
+    \psplot[linecolor=eGreen,algebraic]{-1.25}{1.25}{\f(x)}
+\end{pspicture} \\
+\\
+\\
+\\
+\\
+\\
+\begin{pspicture}(-1.5,0)(0,3.5)
+    \def\f(#1){sin(#1)}
+    \psaxes[linecolor=white,tickcolor=white,labels=none,ticksize=-2pt 2pt]{->}(0,0)(-2,-2)(2,2)[\textcolor{white}{$x$},0][\textcolor{white}{$y$},90]
+    \psplot[linecolor=eGreen,algebraic]{-2.5}{2.5}{\f(x)}
+\end{pspicture} \hspace{40mm}
+
+&
+
+\begin{pspicture}(-1.5,0)(0,3.5)
+    \def\f(#1){abs(#1)}
+    \psaxes[linecolor=white,tickcolor=white,labels=none,ticksize=-2pt 2pt]{->}(0,0)(-2,-2)(2,2)[\textcolor{white}{$x$},0][\textcolor{white}{$y$},90]
+    \psplot[linecolor=eGreen,algebraic]{-2}{2}{\f(x)}
+\end{pspicture} \hspace{40mm}
+
+&
+
+\begin{pspicture}(-1.5,0)(0,3.5)
+    \def\f(#1){log(#1)}
+    \psaxes[linecolor=white,tickcolor=white,labels=none,ticksize=-2pt 2pt]{->}(0,0)(-2,-2)(2,2)[\textcolor{white}{$x$},0][\textcolor{white}{$y$},90]
+    \psplot[linecolor=eGreen,algebraic]{0.01}{3}{\f(x)}
+\end{pspicture} \\
+\\
+\\
+\\
+\\
+\\
+\begin{pspicture}(-1.5,0)(0,3.5)
+    \def\f(#1){cos(#1)}
+    \psaxes[linecolor=white,tickcolor=white,labels=none,ticksize=-2pt 2pt]{->}(0,0)(-2,-2)(2,2)[\textcolor{white}{$x$},0][\textcolor{white}{$y$},90]
+    \psplot[linecolor=eGreen,algebraic]{-2.5}{2.5}{\f(x)}
+\end{pspicture} \hspace{40mm}
+
+&
+
+\begin{pspicture}(-1.5,0)(0,3.5)
+    \def\f(#1){1/#1}
+    \psaxes[linecolor=white,tickcolor=white,labels=none,ticksize=-2pt 2pt]{->}(0,0)(-2,-2)(2,2)[\textcolor{white}{$x$},0][\textcolor{white}{$y$},90]
+    \psplot[linecolor=eGreen,algebraic]{0.5}{2}{\f(x)}
+    \psplot[linecolor=eGreen,algebraic]{-2}{-0.5}{\f(x)}
+\end{pspicture} \hspace{40mm}
+
+&
+
+\begin{pspicture}(-1.5,0)(0,3.5)
+    \def\f(#1){2^#1}
+    \psaxes[linecolor=white,tickcolor=white,labels=none,ticksize=-2pt 2pt]{->}(0,0)(-2,-2)(2,2)[\textcolor{white}{$x$},0][\textcolor{white}{$y$},90]
+    \psplot[linecolor=eGreen,algebraic]{-2}{1.5}{\f(x)}
+\end{pspicture} \\
+\\
+\\
+\\
+\\
+
+\end{tabular}
+
+\end{addmargin}
+
+\pagebreak
+\newpage
+
+\sectionHeader{Section 5}{Calculus}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 1.} Find the derivative of {\Large $$f(x) = \sin(\tan(\sec(\cos(x)))).$$}}}}
+\end{addmargin}
+
+\vspace{40mm}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 2.} Find the derivative of {\Large $$f(x) = x^{2022}.$$}}}}
+\end{addmargin}
+
+\vspace{40mm}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 3.} Solve {\Large $$\int \sec^2(x) \hspace{2mm} dx.$$}}}}
+\end{addmargin}
+
+\pagebreak
+\newpage
+
+\sectionHeader{Section 6}{Challenge}
+
+\begin{addmargin}[0em]{2em}
+{\small \textcolor{eBrightWhite}{{\cousine {\cousinebd 1.} Solve {\Large $$\int 2xe^{x^2} \hspace{2mm} dx.$$}}}}
+\end{addmargin}
+
+\end{document}
